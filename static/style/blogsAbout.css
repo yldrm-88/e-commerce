@@ -1,0 +1,16 @@
+.blogDiv{
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+.blogDiv p{
+    width: 100%;
+}
+
+.blogDiv img{
+    width: 100%;
+}

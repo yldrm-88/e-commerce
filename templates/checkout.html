@@ -1,0 +1,73 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+{% include 'include/_navbar.html' %}
+
+<div class="row" style="width: 80%; margin: auto; background-color: whitesmoke; border-radius: 10px; margin-top: 20px; margin-bottom: 20px;">
+    <div class="col-lg-6 " >
+        <div class="box-element" id="form-wrapper">
+            <form id="form">
+                <div id="user-info">
+                    <div class="form-field">
+                        <input type="text" class="form-control" name="name" placeholder="İsminiz.." required>
+                    </div>
+                    <div class="form-field">
+                        <input type="email" class="form-control" name="email" placeholder="Emailiniz.." required>
+                    </div>
+                </div>
+                <div id="shipping-info" >
+                    <hr>
+                    <p>Gönderim Bilgileri</p>
+                    <hr>
+                    <div class="form-field">
+                        <input type="text" class="form-control" name="address" placeholder="Adresiniz.." required>
+                    </div>
+                    <div class="form-field">
+                        <input type="text" class="form-control" name="city" placeholder="Şehriniz.." required>
+                    </div>
+                    <div class="form-field">
+                        <input type="text" class="form-control" name="state" placeholder="Mahalle.." required>
+                    </div>
+                    <div class="form-field">
+                        <input type="text" class="form-control" name="street" placeholder="Sokak.." required>
+                    </div>
+
+                </div>
+                <input id="form-button" class="account2-btn btn-block" style="width: 40%; height: 50px;" type="submit" value="Devam Et">
+            </form>
+        </div>
+        <br>
+        <div class="box-element hidden" id="payment-info">
+            <small>Ödeme Bilgileri</small>
+            <button id="make-payment" class="account2-btn">Ödeme yap</button>
+        </div>
+
+
+    </div>
+
+
+    <div class="col-lg-6">
+        <div class="box-element">
+            <a class="btn btn-outline-dark" href="{% url 'detail' %}">&#x2190;Sepete Geri Dön</a>
+            <hr>
+            <h3>Sipariş Özeti</h3>
+            <hr>
+            {% for item in items %}
+            <div class="cart-row">
+                <div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
+                <div style="flex:2">{{item.product.name}}</div>
+                <div style="flex:1">₺ {{item.product.price}}</div>
+                <div style="flex:1"><p>x{{item.quantity}}</p>
+            </div>
+        </div>
+     
+        {% endfor %}
+       <br>
+        <h5>Adet: {{order.get_cart_items}}</h5>
+        <h5>Toplam: ₺ {{order.get_cart_total|floatformat:2}}</h5>
+    </div>
+</div>
+</div>
+
+{% include 'include/_footer.html' %}
+{% endblock body %}

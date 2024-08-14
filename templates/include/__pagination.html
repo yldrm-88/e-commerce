@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="text-center mt-5 mb-5 " >
+    {% if page.has_previous %}
+    <a href="?page={{ page.previous_page_number }}" class="account2-btn" style="text-decoration: none; margin-right: 10px;">Önceki</a>
+    {% endif %}
+    <span> Sayfa {{ page.number }} / {{ page.paginator.num_pages }} </span>
+    {% if page.has_next %}
+    <a href="?page={{ page.next_page_number }}" class="account2-btn" style="text-decoration: none;margin-left: 10px;">Sonraki</a>
+{% endif %}
+</div>

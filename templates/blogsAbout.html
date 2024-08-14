@@ -1,0 +1,16 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+{% include 'include/_navbar.html' %}
+        
+       
+       <div class="blogDiv">
+        <h1 style="color: #536f1b;">{{ blog.title }}</h1>
+        <div>{{ blog.about | safe }}</div>
+        <br>
+        <div>{{blog.author}}</div>
+        <div>{{blog.date_added}}</div>
+       </div>
+
+{% include 'include/_footer.html' %}
+{% endblock body %}

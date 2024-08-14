@@ -1,0 +1,84 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+     {% include 'include/_navbar.html' %}
+            
+   
+        <div class="register-img">
+            <img src="{% static 'image/register/barista.jpg' %}" alt="">
+
+            <div class="register-about">
+                <h3>Hesap Oluştur</h3>
+                <div style="display: flex; list-style-type: none; padding: 0;">
+                    <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a></i>
+                    </li>
+                    <li><a href="{% url 'login' %}">Giriş Yap</a></li>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="register-col">
+           {% include 'include/__account.html' %}
+            
+            <div class="box-list-right">
+                <div class="inner2">
+                    <p >Eğer daha önce kayıt olduysanız, lütfen oturum açma sayfasına gidiniz.</p>
+                </div>
+               <form action="" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+                {% elif success%}
+                <div class="alert alert-success">
+                    {{ success }}
+                </div>
+                {% endif %}
+                <div class="user-information">
+                    <p>Üyelik Bilgileri</p>
+                    <hr/>
+                    <div>
+                        <label>*Adınız</label>
+                        <input type="text"placeholder="Adınız" name="firstname" required>
+                    </div> 
+    
+                    <div>
+                        <label>*Soyadınız</label>
+                        <input type="text" placeholder="Soyadınız" name="lastname" required>
+                    </div>
+
+                    <div>
+                        <label>*Kullanıcı Adınız</label>
+                        <input type="text" placeholder="Kullanıcı adınız" name="username" required>
+                    </div>
+
+                    <div>
+                        <label>*E-Posta</label>
+                        <input type="email"placeholder="E-Posta" name="email" required>
+                    </div>
+                </div>
+
+                <div class="user-information">
+                    <p>Parolanız</p>
+                    <hr/>
+                    <div>
+                    <label>*Parola</label>
+                    <input type="password" placeholder="Parola" name="password" required>
+                    </div>
+                    <div>
+                    <label>*Parola(Tekrar)</label>
+                    <input type="password" placeholder="Parola(Tekrar)" name="repassword" required>
+                    </div>
+                </div>
+
+                <button class="register-button" type="submit">DEVAM</button>
+
+               </form>
+                </div>
+            </div>
+        </div>
+           
+   {% include 'include/_footer.html' %}  
+{% endblock body %}

@@ -1,0 +1,140 @@
+.communication{
+    width: 75%;
+    max-width: 1200px;
+    display: flex;
+    margin: auto;
+    margin:20px auto 30px auto;
+    justify-content: space-between;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.comunication-col1{
+    font-size: 15px;
+    max-width: 45%;
+    height: 300px;
+    margin-top: 20px;
+    margin-right: 10px;
+    border: 1px solid #536f1b;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.comunication-col1 h1{
+    font-weight: bold;
+    margin-bottom:20px;
+    color: #536f1b;
+}
+.comunication-col1 p{
+    margin-bottom: 10px;
+}
+
+.comunication-col2{
+    max-width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+
+}
+.comunication-col2 div{
+    margin-bottom: 10px;
+  
+}
+.comunication-col2 label{
+    color: #536f1b;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.comunication-col2 input,
+.comunication-col2 textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #536f1b;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+   
+}
+
+.comunication-col2 textarea{
+    height: 250px;
+}
+
+.connection-btn{
+    background-color:#536f1b; ;
+    padding: 10px 20px;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.connection-btn:hover{
+    transform:scale(1.05)
+}
+
+
+@media (min-width:1025px) and (max-width:1280px){
+    .communication{
+        width: 80%;
+    }
+    
+    .comunication-col1,
+    .comunication-col2 {
+        max-width: 45%; 
+    }
+  
+    .comunication-col2 textarea{
+        height: 220px;
+    }
+
+}
+
+@media (min-width:700px) and (max-width:1024px){
+    .communication{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .comunication-col1,
+    .comunication-col2 {
+       max-width: 100%;
+       margin-bottom: 20px; 
+    }
+ 
+    .comunication-col2 textarea{
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media (max-width:699px){
+
+    .communication{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .comunication-col1{ 
+        max-width: 80%;
+        height: 100%; 
+        padding: 10px;
+        margin-bottom: 20px;
+      
+    }
+    .comunication-col1,
+    .comunication-col2 {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .comunication-col2 textarea{
+        height: 250px;
+    }
+    
+    
+}

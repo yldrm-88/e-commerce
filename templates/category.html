@@ -1,0 +1,43 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+{% include 'include/_navbar.html' %}
+
+
+<div class="register-img">
+    <img src="{% static 'image/coffee/coffee.jpg' %}" alt="">
+    <div class="register-about">
+        <h3>Kahve</h3>
+        <ul style="display: flex; list-style-type: none; padding: 0;">
+            <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a></i>
+            </li>
+            <li><a href="{% url 'coffee' %}">Kahve</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="col-80">
+    <div class="search2">
+        <input type="search" placeholder="Ne aramıştınız?">
+        <button><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+    </div>
+
+   
+    <div class="products-col">
+        {% for product in products %}
+        <a href="{% url 'coffeeAbout' product.id %}">  
+            <div class="card-container">
+                <div class="card-image">
+                    <img src="{{ product.imageURL }}" alt="">
+                    <div class="card-information">{{product.name}}</div>
+                </div>
+            </div>
+         </a>
+         {% endfor %}
+     </div>
+</div>
+
+
+{% include 'include/_footer.html' %}
+{% endblock body %}

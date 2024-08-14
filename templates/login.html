@@ -1,0 +1,52 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+    {% include 'include/_navbar.html' %}
+
+    <div class="register-img">
+        <img src="{% static 'image/register/barista.jpg' %}" alt="">
+        <div class="register-about">
+            <h3>Oturum Aç</h3>
+            <div style="display: flex;">
+                <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="{% url 'register' %}">Kayıt Ol</a></li>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-col">
+
+        {% include 'include/__account.html' %}
+
+        <div class="login-box1">
+            <p class="login-title1">Yeni Müşteriyim</p>
+            <p class="login-title2">Hesap Oluştur</p>
+            <p>Hızlı ve güvenli bir alışveriş için yeni bir hesap oluşturun. Böylece sipariş durumunuzu takip edebilir ve önceki siparişlerinize göz atabilirsiniz.</p>
+            <button class="login-button"><a href="{% url 'register' %}" style="color: whitesmoke;">DEVAM</a></button>
+        </div>
+
+        <div class="login-box2">
+            <p class="login-title1">Kayıtlı Müşteriyim</p>
+            <p class="login-title2">Daha önce kayıt oldum.</p>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <div class="login-inner">
+                    <label>Kullanıcı Adınız</label>
+                    <input type="text" placeholder="Kullanıcı Adı" name="userName">
+                </div>
+                <div class="login-inner">
+                    <label>Parola</label>
+                    <input type="password" placeholder="Parola" name="userPass">
+                </div>
+                <button class="login-button" type="submit">OTURUM AÇ</button>
+            </form>
+        </div>
+    </div>
+    {% include 'include/_footer.html' %}
+{% endblock body %}

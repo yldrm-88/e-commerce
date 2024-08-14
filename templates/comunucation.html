@@ -1,0 +1,59 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+{% include 'include/_navbar.html' %}
+
+
+<div class="register-img">
+    <img src="{% static 'image/coffee/coffee.jpg' %}" alt="">
+    <div class="register-about">
+        <h3>Kahve</h3>
+        <div style="display: flex;">
+            <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a></i>
+            </li>
+            <li><a href="{% url 'coffee' %}">Kahve</a></li>
+            <li><a href="#">Hesabım</a></li>
+        </div>
+    </div>
+</div>
+
+
+    <div class="communication">
+       <div class="comunication-col1">
+            <h1>BİZE ULAŞIN</h1>
+            <p>Bize bir öneriniz mi var?</p>
+            <p>Kahve konusunda yardıma mı ihtiyacınız var?</p>
+            <p>Ürünlerimiz hakkında daha fazla bilgi mi almak istiyorsunuz?</p>
+            <p>İstediğiniz her konuda bu form üzerinden bize ulaşabilirsiniz.</p>
+       </div>
+
+       <div class="comunication-col2">
+          <form action="" method="POST">
+            {% csrf_token %}
+            {% if messages  %}
+            {% for message in messages %}
+            <div class="alert alert-light">
+                {{success}}
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div> 
+                <label>Kullanıcı Adınız*</label>
+                <input type="text" name="name" required>
+            </div>
+            <div>
+                <label>E-postanız*</label>
+                <input type="email" name="email" >
+            </div>
+            <div>
+                <label>Mesajınız*</label>
+                <textarea rows="5" cols="100" name="message" required></textarea>
+            </div>
+            <button class="connection-btn" type="submit">Gönder</button>
+          </form>
+       </div>
+    </div>
+
+
+{% include 'include/_footer.html' %}
+{% endblock body %}

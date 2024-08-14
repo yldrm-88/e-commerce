@@ -1,0 +1,33 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+{% include 'include/_navbar.html' %}
+        
+        <div class="register-img">
+            <img src="{% static 'image/coffee/coffee.jpg' %}" alt="">
+            <div class="register-about">
+                <h3>Blog</h3>
+                <div style="display: flex;">
+                    <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="{% url 'coffee' %}">Blog ({{count}})</a></li>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="products-col mt-5 mb-5" style="width: 70%; margin: auto; ">
+                {% for blog in blogs %}
+                <a href="{% url 'blogsAbout' blog.id %}">  
+                    <div class="card-container">
+                        <div class="card-image">
+                            <img src="{{blog.imageURL}}">
+                            <div class="card-information">{{blog.title}}</div>
+                        </div>
+                    </div>
+                 </a>
+                 {% endfor %}
+             </div>
+        </div>
+
+{% include 'include/_footer.html' %}
+{% endblock body %}

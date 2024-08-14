@@ -1,0 +1,155 @@
+/* Register Page CSS*/
+.register-img{
+    width: 100%;
+    position: relative;
+    background-color: #739a26;
+}
+
+.register-img img{
+    width: 100%;
+    opacity: 0.5;
+    height: 200px;
+    object-fit: cover;
+}
+
+.register-col{
+    width: 100%;
+    height: auto;
+}
+
+.register-col img{
+    width: 100%;
+    opacity: 0.5;
+}
+
+
+.register-about{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.7); 
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.register-about li{
+    list-style: none;
+    margin-top: 18px;
+    margin-right: 25px;
+    transition: 0.3;
+    text-decoration: none;
+}
+
+.register-about i{
+    color:whitesmoke ;
+}
+.register-about a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.register-about i:hover,
+.register-about li:hover,
+.register-about a:hover {
+    color: #536f1b;
+}
+
+.register-col{
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 30px 5px;
+}
+
+
+.box-list-left{
+    background-color: whitesmoke;
+    border: 1px solid #536f1b;
+    border-radius: 2px;
+    width: 300px;
+    margin-top: 17px;
+    margin-right: 15px;
+}
+.box-list-left li {
+    list-style: none;
+    line-height: 1.7;
+}
+
+.box-list-left li a {
+    color: black;
+    text-decoration: none;
+}
+.box-list-left div li a:hover {
+    color: #536f1b;
+}
+.h2{
+    background-color: #536f1b;
+    color:whitesmoke;
+    padding: 10px 80px;
+}
+.h2 p{
+    font-weight: 400;
+    font-size: 20px;
+}
+.inner{
+    padding: 10px 20px;
+}
+
+.box-list-right{
+    margin-left:30px;
+    padding: 20px;
+}
+
+.user-information{
+    width: 100%;
+  margin-top: 15px;
+}
+.user-information p{
+    font-size: 20px;
+    color: #536f1b;
+    margin-bottom: 7px;
+}
+
+.user-information div{
+    margin-top: 20px;
+    padding: 2px 20px;
+}
+
+.user-information label{
+    color: #536f1b;
+    margin-right: 20px;
+    display: inline-block;
+    width: 150px; 
+    margin-bottom: 5px;
+}
+
+.user-information input{
+   width: 100%;
+   padding: 10px 10px;
+   border: 1px solid #536f1b;
+   border-radius: 10px;
+}
+
+.register-button{
+    padding: 15px 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: #536f1b;
+    color: whitesmoke;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.register-button:hover{
+ background-color: black;
+ color: whitesmoke;
+}

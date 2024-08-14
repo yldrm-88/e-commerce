@@ -1,0 +1,70 @@
+{% load static %}
+<div class="header">
+    <div class="black">
+        <p>Online satış mağazamıza hoşgeldiniz!</p>
+    </div>
+    <div class="icon">
+        <div class="customer">
+                <div>
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <p style="margin: 0;">Müşteri Hizmetleri</p>
+                    <p >0424 555 66</p>
+                </div>
+        </div>
+            <div class="logo">
+                    <img src="{% static 'image/homepage/icon2.png' %}" alt=""> 
+                    <h1>DOĞA COFFEE</h1>
+            </div>
+
+            <div class="accountCard">
+                <ul>
+                   <div class="menu-container">
+                   {% if user.is_authenticated %}
+                    <h5 class="account" style="margin-top:35px;">{{ user.first_name }}</h5>
+                   {% else %}
+                   <button class="account"><i class="fas fa-user"></i></button>
+                   {% endif %}
+                    <div class="dropdown-menu">  
+                        {% if user.is_authenticated %}
+                       <a href="{% url 'account' %}">Hesabım</a>
+                        <a href="{% url 'logout' %}">Çıkış Yap</a>
+                        {% else %}
+                        <a href="{% url 'login' %}">Oturum Aç</a>
+                        <a href="{% url 'register' %}">Kayıt Ol</a>
+                        {% endif %}
+                    </div>
+                    <div></div>
+                   </div>
+                    <div class="line"></div>
+                   <a href="{% url 'detail' %}" style="text-decoration: none;">  
+                    <div class="cart-icon-container">
+                    <i class="fa-solid fa-cart-shopping fa-2x card shopping-cart" style="border: none; background-color: whitesmoke;" "></i>
+                    <span id="cart-count">{{cartItems}}</span>
+                </div>
+            </a>
+                </ul>
+            </div>
+    </div>
+    <div class="menu">
+        <div class="menu-left">
+            <ul>
+                <li><a href="{% url 'homepage' %}">ANASAYFA</a></li>
+                <li class="menu-container">
+                    <a href="{% url 'coffee' %}">KAHVE</a>
+                    <div class="dropdown-menu">
+                        {% for category in categories %}
+                            <a href="{% url 'category' category.id %}">{{category.name}}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li><a href="{% url 'blogs' %}">BLOG</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'comunucation' %}">İLETİŞİM</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+

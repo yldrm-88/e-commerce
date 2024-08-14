@@ -1,0 +1,126 @@
+.account2 {
+    width: 80%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 50px auto;
+    display: flex;
+    background: whitesmoke;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.account2-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account2-image img {
+    width: 300px;
+    height: 300px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.account2-about {
+    width: 50%;
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: 300;
+    padding: 0 20px;
+}
+
+.account2-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 0;
+ 
+}
+
+.account2-item label {
+    flex: 0 0 150px; 
+    margin-right: 20px; 
+}
+
+.account2-item p {
+    flex: 1;
+    margin: 0; 
+    text-align: left; 
+}
+
+
+.account2-about hr{
+    width: 100%;
+    color: #536f1b;
+}
+
+.account2-btn{
+    margin-top: 20px;
+    padding: 15px 10px;
+    background: #536f1b;
+    border: none;
+    cursor: pointer;
+    background: #536f1b;
+    color: whitesmoke;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.account2-btn a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.account2-btn:hover{
+    transform:scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .account2 {
+        flex-direction: column;
+        height: auto;
+        margin: 10 auto; 
+    }
+
+    .account2-image {
+       max-width: 100%;
+    }
+
+    .account2-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .account2-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .account2-item {
+        max-width: 90%; 
+    }
+
+    .account2-btn {
+        margin-top:10px;
+        padding: 10px 5px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:500px){
+    .account2-about {
+        width: 100%;
+    }
+    .account2-item {
+        max-width: 90%; 
+    }
+}
+

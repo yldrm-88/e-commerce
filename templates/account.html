@@ -1,0 +1,54 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+{% include 'include/_navbar.html' %}
+           
+
+        <div class="register-img">
+            <img src="{% static 'image/register/barista.jpg' %}">
+            <div class="register-about">
+                <h3>Hesabım</h3>
+                <div style="display: flex;">
+                    <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a></i>
+                    </li>
+                    <li><a href="{% url 'account' %}">Hesabım</a></li>
+                    <li><a href="#">{{ user.customer.first_name}}</a></li>
+                </div>
+            </div>
+        </div>
+
+        <div class="account2">
+            <div class="account2-image">
+                <img src="{% static 'image/profile(1).webp' %}" alt="">
+            </div>
+            <div class="account2-about">
+                <div class="account2-item">
+                    <label>Adınız:</label>
+                    <p>{{ user.first_name }}</p>
+                </div>
+                <div class="account2-item">
+                    <label>Soyadınız:</label>
+                    <p>{{ user.last_name }}</p>
+                </div>
+                <hr>
+                <div class="account2-item">
+                    <label>Kullanıcı Adı:</label>
+                    <p>{{user.username}}</p>
+                </div>
+                <div class="account2-item">
+                    <label>E Posta:</label>
+                    <p>{{user.email}}</p>
+                </div>
+                <hr>
+                <button class="account2-btn" >Alışveriş Geçmişi</button>
+                <button class="account2-btn"><a href="{% url 'delete' %}">Hesabı Sil</a></button>
+            </div>
+        </div>
+        
+            
+{% include 'include/_footer.html' %}
+{% endblock body %}
+
+       
+
+        

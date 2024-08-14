@@ -1,0 +1,44 @@
+{% load static %}
+<div class="footer">
+    <div class="footer2">
+        <div class="contact">
+            <h3>İLETİŞİM BİLGİLERİ</h3>
+            <p>Addres: Ankara,Öveçler</p>
+            <p>Telefon: 0555 555 55 55</p>
+            <p>Email: doga@gmail.com</p>
+            <div class="social-icon">
+                <i class="fa-brands fa-facebook fa-2x"></i>
+                <i class="fa-brands fa-twitter fa-2x"></i>
+                <i class="fa-brands fa-youtube fa-2x"></i>
+                <i class="fa-brands fa-google fa-2x"></i>
+                <i class="fa-brands fa-pinterest fa-2x"></i>
+            </div>
+        </div>
+        <div class="account-detail">
+            <h3>HESABIM</h3>
+            {% if user.is_authenticates %}
+            <a href="{% url 'homepage' %}">Anasayfa</a>
+            <a href="{% url 'account' %}">Hesabım</a>
+            <a href="{% url 'comunucation' %}">İletişim</a>
+            <a href="#">Alışveriş Listesi</a>
+            <a href="#">Satın Al</a>
+            <a href="{% url 'userLogout' %}">Oturumu Kapat</a>
+            {% else %}
+            <a href="{% url 'homepage' %}">Anasayfa</a>
+            <a href="{% url 'coffee' %}">Kahve</a>
+            <a href="{% url 'login' %}">Oturum Aç</a>
+            <a href="{% url 'register' %}">Hesap Oluştur</a>
+            {% endif%}
+        </div>
+    </div>
+    <hr class="line2">
+
+   <div class="footer3">
+    <div>
+        <p>Doğa Coffee © 2024 - Tüm Hakları Saklıdır.</p>
+    </div>
+    <div>
+        <img src="{% static 'image/homepage/payment.png' %}">
+    </div>
+   </div>
+</div>

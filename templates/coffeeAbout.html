@@ -1,0 +1,41 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block body %}
+{% include 'include/_navbar.html' %}
+
+
+<div class="register-img">
+    <img src="{% static 'image/coffee/detail.jpg' %}">
+    <div class="register-about">
+        <h3>Sepet</h3>
+        <ul style="display: flex; list-style-type: none; padding: 0;">
+            <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="{% url 'coffee' %}">Kahve</a></li>
+            <li>{{ product.name }}</li>
+        </ul>
+    </div>
+</div>
+<div class="products-col2">
+    <div class="product-img">
+        <img src="{{ product.imageURL }}" >
+    </div>
+    <div class="product-detail">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <hr>
+        <p><span>Gövde: </span>{{ product.govde }}</p>
+        <p><span>Asidite: </span>{{ product.asidite }}</p>
+        <hr>
+        <p><span>İçim: </span>{{ product.icim }}</p>
+        <p><span>Stok: </span>{{ product.stock }}</p>
+        <p><span>İşleme Süreci: </span>{{ product.surec }}</p>
+        <hr>
+        <p><span>Hakkında: </span>{{ product.about }}</p>
+        <p class="product-price" data-price="{{ product.price }}" style="font-weight: bold;">{{ product.price|floatformat:2 }}₺</p>
+       <div>
+            <button data-product="{{product.id}}" data-action="add" type="submit" class=" btn-cart add-btn update-btn"> <i class="fa fa-shopping-cart "></i>Sepete Ekle</button>
+       </div>
+    </div>
+</div>
+
+{% include 'include/_footer.html' %}
+{% endblock body %}
